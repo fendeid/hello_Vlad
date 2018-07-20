@@ -6,9 +6,10 @@ turn = 1
 # Путь со скриптом.(начальная директория)
 script_direct = __file__[0 : __file__.find(os.path.basename(__file__))]
 print()
+
 def bust_script(direct):	
 	# Если директория не пустая	
-	if os.listdir(direct) != '':			
+	if os.listdir(direct) != []:			
 		for obj in os.listdir(direct):
 			# Обновляем количество строк для каждого файла
 			strings = 0	
@@ -36,7 +37,7 @@ def bust_script(direct):
 				print('Директория:',direct,'\nИмя:',obj,'\nКоличество строк:', strings)	
 				print('-------------------')
 	# Если директория пустая
-	else:
+	else:		
 		print('Директория:',direct,'\nСтатус: Пуста')
 		print('-------------------')	
 	
