@@ -1,2 +1,3 @@
 # hello_Vlad
-Counts lines in files.
+Скрипт для подсчета строк в файлах.
+Secial for SinimaWath
