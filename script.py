@@ -19,15 +19,18 @@ def bust_script(direct):
 				bust_script(new_direct)	
 			# Если объект является файлом
 			elif os.path.isfile(direct + obj) == True:
-				#Файл открывается для чтения
-				with open(direct + obj, 'r', encoding = 'utf-8') as file:
-					for line in file:	
-						if turn == 1:	
-							strings += 1
-						elif turn == 2:							
-							for line in file:
-								if file.readline != '\n' and file.readline != '':
-									strings += 1
+				try:
+					#Файл открывается для чтения
+					with open(direct + obj, 'r', encoding = 'utf-8') as file:
+						for line in file:	
+							if turn == 1:	
+								strings += 1
+							elif turn == 2:							
+								for line in file:
+									if file.readline != '\n' and file.readline != '':
+										strings += 1
+				except:
+					pass
 			# Вывод 	
 			if os.path.isfile(direct + obj) == True:
 				print('Директория:',direct,'\nИмя:',obj,'\nКоличество строк:', strings)	
@@ -36,5 +39,5 @@ def bust_script(direct):
 	else:
 		print('Директория:',direct,'\nСтатус: Пуста')
 		print('-------------------')	
-
+	
 bust_script(script_direct)
