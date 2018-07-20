@@ -5,7 +5,7 @@ import os, sys
 turn = 1
 # Путь со скриптом.(начальная директория)
 script_direct = sys.argv[0][: sys.argv[0].find(os.path.basename(__file__))]
-print(script_direct)
+print()
 
 def bust_script(direct):	
 	# Если директория не пустая	
