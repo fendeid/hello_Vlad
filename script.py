@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*- 
-import os
+import os, sys
 
 # Значение 1 считает пустые строки, Значение 2 без них
 turn = 1
 # Путь со скриптом.(начальная директория)
-script_direct = __file__[0 : __file__.find(os.path.basename(__file__))]
-print()
+script_direct = sys.argv[0][: sys.argv[0].find(os.path.basename(__file__))]
+print(script_direct)
 
 def bust_script(direct):	
 	# Если директория не пустая	
-	if os.listdir(direct) != []:			
+	if os.listdir(direct):			
 		for obj in os.listdir(direct):
 			# Обновляем количество строк для каждого файла
 			strings = 0	
