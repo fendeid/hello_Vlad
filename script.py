@@ -7,8 +7,8 @@ turn = 1
 script_direct = __file__[0 : __file__.find(os.path.basename(__file__))]
 print()
 def bust_script(direct):	
-	# Если директория не пустая
-	if os.listdir(direct):		
+	# Если директория не пустая	
+	if os.listdir(direct) != '':			
 		for obj in os.listdir(direct):
 			# Обновляем количество строк для каждого файла
 			strings = 0	
