@@ -9,7 +9,8 @@ print()
 def bust_script(direct):		
 	# Если директория не пустая		
 	if os.listdir(direct):	
-		print('Директория:',direct)		
+		print('Директория:\n',direct)	
+		print()
 		for obj in os.listdir(direct):
 			# Обновляем количество строк для каждого файла
 			strings = 0	
