@@ -6,17 +6,17 @@ turn = 1
 # Путь со скриптом.(начальная директория)
 script_direct = sys.argv[0][: sys.argv[0].find(os.path.basename(__file__))]
 print()
-
-def bust_script(direct):	
-	# Если директория не пустая	
-	if os.listdir(direct):			
+def bust_script(direct):		
+	# Если директория не пустая		
+	if os.listdir(direct):	
+		print('Директория:',direct)		
 		for obj in os.listdir(direct):
 			# Обновляем количество строк для каждого файла
 			strings = 0	
 			# Если объект является директорией
 			if os.path.isdir(direct + obj) == True:	
-				# Задается новая директория, рекурсивная функция.				
-				new_direct = direct + obj + '\\'
+				# Задается новая директория, рекурсивная функция.								
+				new_direct = direct + obj + '/'
 				bust_script(new_direct)	
 			# Если объект является файлом
 			elif os.path.isfile(direct + obj) == True:
@@ -29,13 +29,12 @@ def bust_script(direct):
 							elif turn == 2:							
 								for line in file:
 									if file.readline != '\n' and file.readline != '':
-										strings += 1
+										strings += 1				
 				except:
 					pass
-			# Вывод 	
-			if os.path.isfile(direct + obj) == True:
-				print('Директория:',direct,'\nИмя:',obj,'\nКоличество строк:', strings)	
-				print('-------------------')
+				print('Имя:', obj, '\nКоличество строк:', strings)
+				print('-------------------')			 	
+			    
 	# Если директория пустая
 	else:		
 		print('Директория:',direct,'\nСтатус: Пуста')
